@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'caracterizacion_S.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'de2ddj4toe9o6s',
-        'USER': 'bymtdbnetmlvzp',
-        'PASSWORD': '0cdbe0d30c4cbc914e45a0dad60eb496245325d4574c2329ad840e2ca9fc0274',
-        'HOST': 'ec2-54-173-237-110.compute-1.amazonaws.com',
+        'NAME': 'dbp1gfnuq2g14e',
+        'USER': 'wfliqnvacagvic',
+        'PASSWORD': 'a6739243fb5d0936b975d2031f43a65260110c119db1ed891282b84053b2bf0c',
+        'HOST': 'ec2-3-93-206-109.compute-1.amazonaws.com',
         'PORT': 5432
         #pip3 install PyMySQL
         #pip3 install pillow
