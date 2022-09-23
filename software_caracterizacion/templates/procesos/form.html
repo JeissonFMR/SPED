@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/formu.css' %}" />
+    <script src="{% static 'js/index.js' %}"></script>
+  </head>
+  <body>
+    <form enctype="multipart/form-data" method="post" id="personForm" data-responsable-url="{% url 'ajax_load_responsable' %}">
+      {% csrf_token %}
+      
+      <div class="container">
+        <div class="row mt-4 mt-4 mb-4">
+          <div class="col-6">
+            <span id="label_nom_pro">{{ form_procesos.nom_pro.label }}</span>
+            {{ form_procesos.nom_pro }}
+          </div>
+          <div class="col-6">
+            
+            <span id="label_rep_pro">{{ form_procesos.rep_pro.label }}</span>
+      {{ form_procesos.rep_pro }}
+          </div>
+          
+        </div>
+        <!-- other -->
+        <div class="row mt-4">       
+            <div class="col-6">
+              
+              <span id="label_doc_pro">{{ form_procesos.doc_pro.label }}</span>
+              {{ form_procesos.doc_pro }}
+            </div>
+          <div class="col-6">
+            <span id="label_usuarioid">{{ form_procesos.usuarioid.label }}</span> <br>
+            {{ form_procesos.usuarioid }}
+          </div>
+        </div>
+        <!-- finother -->
+         <!-- other -->
+      <div class="row mt-4">       
+        <div class="col-6">
+          
+          <span id="label_tipoprocesoid">{{ form_procesos.tipoprocesoid.label }}</span> <br>
+            {{ form_procesos.tipoprocesoid }}
+        </div>
+      <div class="col-6">
+        
+        <span id="label_programaid">{{ form_procesos.unidadesid.label }}</span> <br>
+          {{ form_procesos.unidadesid }}
+      </div>
+    </div>
+    <!-- finother -->
+    <!-- other -->
+    <div class="row mt-4">       
+      <div class="col">
+  
+        <span id="label_responsableid">{{ form_procesos.responsableid.label }}</span> <br>
+        {{ form_procesos.responsableid }}
+      </div>
+    <div class="col">
+      <span id="label_plataformaid">{{ form_procesos.plataformaid.label }}</span> <br>
+      {{ form_procesos.plataformaid }}
+    </div>
+  </div>
+  <!-- finother -->
+        <!-- other -->
+        <div class="row mt-4">       
+          <div class="col-6">
+            <span id="label_pre_pro">{{ form_procesos.pre_pro.label }}</span><br>
+            {{ form_procesos.pre_pro }}
+          </div>
+        <div class="col-6">
+          <span id="label_res_pro">{{ form_procesos.res_pro.label }}</span><br>
+        {{ form_procesos.res_pro }}
+        </div>
+      </div>
+      <!-- finother -->
+      <!-- other -->
+      <div class="row mt-4">       
+        <div class="col-md-auto">
+          <span id="label_tie_pro">{{ form_procesos.tie_pro.label }}</span> <br>
+        {{ form_procesos.tie_pro }}
+        <span id="label_tie_sel">{{ form_procesos.tie_sel.label }}</span>
+        {{ form_procesos.tie_sel }}
+        </div>
+
+    </div>
+    <!-- finother -->
+       
+      </div>
+
+      <div>
+        <span id="label_aut_pro">{{ form_procesos.aut_pro.label }}</span>
+        {{ form_procesos.aut_pro }}
+      </div>
+
+      <br />
+      <div class="container text-center">
+        <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+            <button type="submit" id="tamaño">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_unidadesid").change(function () {
+        const url = $("#personForm").attr("data-responsable-url");
+        const countryId = $(this).val(); 
+
+        $.ajax({
+            url: url,
+            data: {
+                'unidades_id': countryId
+            },
+            success: function (data) {
+                $("#id_responsableid").html(data);
+            }
+        });
+
+    });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block titulo %} Automatización proceso {%endblock%}
+{% load static %} {% block contenido %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/automatizar.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col flecha">
+          <b>PREGUNTA</b>
+        </div>
+        <div class="col flecha2">
+          <b>DOCUMENTOS</b>
+        </div>
+        <div class="col flecha2">
+          <b>TIPO DE UNIDAD</b>
+        </div>
+        <div class="col flecha3">
+          <b>RESPUETA</b>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <!-- ihsgf -->
+    <form enctype="multipart/form-data" method="post" class="fomru">
+      {% csrf_token %}
+      <div class="container threeO">
+        <div class="row">
+          <div class="col">
+            <b>{{form_procesos.pre_pro.value}}</b>
+          </div>
+          <div class="col">
+            <b>{{form_procesos.doc_pro.value}}</b>
+          </div>
+          <div class="col">
+            <b> <!-- obtener que tipo de proceso se tiene -->
+            {{get_tipo}}
+            </b> 
+          </div>
+          <div class="col">
+            <b>{{form_procesos.res_pro.value}}</b>
+          </div>
+        </div>
+      </div>
+
+      <table>
+
+
+        <div class="{{form_procesos.required_css_class}}">
+          <span id="label_idp_pro">{{form_procesos.pre_pro.label}}</span>
+          {{form_procesos.pre_pro}}
+          <span id="label_idp_pro">{{form_procesos.doc_pro.label}}</span>
+          {{form_procesos.doc_pro}}
+          <span id="label_idp_pro">{{form_procesos.res_pro.label}}</span>
+          {{form_procesos.res_pro}}
+
+
+          <span id="label_nom_pro">{{form_procesos.nom_pro.label}}</span>
+          {{form_procesos.nom_pro}}
+
+          <span id="label_tipo_proid">{{form_procesos.tipoprocesoid.label}}</span>
+          {{form_procesos.tipoprocesoid}}
+
+          <span id="label_pla_pro">{{form_procesos.plataformaid.label}}</span>
+          {{form_procesos.plataformaid}}
+
+          <span id="label_user">{{form_procesos.usuarioid.label}}</span>
+          {{form_procesos.usuarioid}}
+
+          <span id="label_rep_pro">{{form_procesos.rep_pro.label}}</span>
+          {{form_procesos.rep_pro}}
+
+          <span id="label_tie_pro">{{form_procesos.tie_pro.label}}</span>
+          {{form_procesos.tie_pro}}
+
+          <span id="label_tie_sel">{{form_procesos.tie_sel.label}}</span>
+          {{form_procesos.tie_sel}}
+
+          <span id="label_user">{{form_procesos.user.label}}</span>
+          {{form_procesos.user}}
+
+          <span id="label_fec_pro">{{form_procesos.fec_pro.label}}</span>
+          {{form_procesos.fec_pro}}
+
+          <span id="label_hor_pro">{{form_procesos.hor_pro.label}}</span>
+          {{form_procesos.hor_pro}}
+
+          <span id="label_unidadesid">{{form_procesos.unidadesid.label}}</span>
+          {{form_procesos.unidadesid}}
+
+          <span id="label_responsableid">{{form_procesos.responsableid.label}}</span>
+          {{form_procesos.responsableid}}
+          
+        </div>
+      </table>
+      <div class="container text-center">
+        <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+            <br>
+            <hr>
+            <span id="label_aut_pro">{{form_procesos.aut_pro.label}}</span>
+          {{form_procesos.aut_pro}}
+            <button type="submit" id="tamaño">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Detalle del proceso</h2>
+      <button class="btn btn-danger" type="button" data-dismiss="modal">
+        X
+      </button>
+    </div>
+
+    <form action="" method="POST" class="formdet">
+      <div class="modal-body">
+        <div class="container">
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-sm-8 fecha_hor">
+                Fecha de creación: {{proceso.fec_pro}}
+              </div>
+              <div class="col-sm-4 fecha_hor">
+                Hora de creación: {{proceso.hor_pro}}
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- tabla -->
+          <table class="table table-bordered border-primary">
+            <tbody>
+              
+              <tr>
+                <th>Responsable del proceso: {{proceso.rep_pro}}</th>
+                <!-- <td>Nombre: {{proceso.nom_pro}}</td> -->
+                <td><b>Usuario que realiza la petición: </b>{{proceso.usuarioid}}</td>
+              </tr>
+              
+              <tr>
+                <td><b>Tipo de unidad: </b>{{proceso.tipoprocesoid}}</td>
+                <td><b>¿Necesidad de documentos? </b>{{proceso.doc_pro}}</td>
+              </tr>
+
+              <tr>
+                <td><b>Pregunta: </b>{{proceso.pre_pro}}</td>
+                <td><b>Respuesta: </b>{{proceso.res_pro}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- tablafin -->
+        </div>
+        
+      </div>
+    </form>
+  </div>
+</div>

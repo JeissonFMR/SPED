@@ -1,0 +1,277 @@
+.flecha {
+  float: left;
+  position: relative;
+  height: 80px;
+  width: 240px;
+  border: solid 2px #2c9bcb;
+  border-right: none;
+  background: rgb(58,220,254);
+  background: linear-gradient(38deg, rgba(58,220,254,1) 0%, rgba(227,250,255,1) 55%, rgba(255,255,255,1) 100%);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.flecha2 {
+  float: left;
+  position: relative;
+  height: 80px;
+  width: 240px;
+  border: solid 2px #2c9bcb;
+  border-right: none;
+  background: rgb(255,255,255);
+background: linear-gradient(38deg, rgba(255,255,255,1) 0%, rgba(227,250,255,1) 55%, rgba(58,220,254,1) 100%);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.flecha3 {
+  float: left;
+  position: relative;
+  height: 80px;
+  width: 240px;
+  border: solid 2px #2c9bcb;
+  border-right: none;
+  background: rgb(58,220,254);
+  background: linear-gradient(38deg, rgba(58,220,254,1) 0%, rgba(227,250,255,1) 55%, rgba(255,255,255,1) 100%);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flecha3:after {
+  position: absolute;
+  top: 16px;
+  right: -25px;
+  width: 48px;
+  height: 47px;
+  border-left: solid 1px #ccc;
+  border-top: solid 1px #ccc;
+  transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+  background: #f8feff;
+  content: "";
+  z-index: -1;
+  border: solid 2px #2c9bcb;
+}
+
+#tamaño {
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #19b3f0 51%,
+    #ff512f 100%
+  );
+}
+
+#tamaño {
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 14px -7px #ffffff;
+  width: 90px;
+  height: 40px;
+  font-size: 15px;
+}
+
+#tamaño:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#tamaño:active {
+  transform: scale(0.95);
+}
+
+#threeO {
+  display: none;
+}
+#label_idp_pro {
+  display: none;
+}
+#id__idp_pro {
+  display: none;
+}
+#id_nom_pro {
+  display: none;
+}
+#label_res_pro {
+  display: none;
+}
+#id_res_pro {
+  display: none;
+}
+#label_obj_pro {
+  display: none;
+}
+#id_obj_pro {
+  display: none;
+}
+#label_alc_pro {
+  display: none;
+}
+#id_alc_pro {
+  display: none;
+}
+#label_dca_pro {
+  display: none;
+}
+#id_dca_pro {
+  display: none;
+}
+#label_pro_pro {
+  display: none;
+}
+#id_pro_pro {
+  display: none;
+}
+#label_cli_pro {
+  display: none;
+}
+#id_cli_pro {
+  display: none;
+}
+#label_ent_pro {
+  display: none;
+}
+
+#label_act_pro {
+  display: none;
+}
+
+#label_sal_pro {
+  display: none;
+}
+
+#label_user {
+  display: none;
+}
+#id_user {
+  display: none;
+}
+
+#id_idp_pro {
+  display: none;
+}
+#label_rec_pro {
+  display: none;
+}
+#id_rec_pro {
+  display: none;
+}
+#label_rlr_pro {
+  display: none;
+}
+#id_rlr_pro {
+  display: none;
+}
+#label_ind_pro {
+  display: none;
+}
+#id_ind_pro {
+  display: none;
+}
+#salida_foranea {
+  display: none;
+}
+#btn_foranea {
+  display: none;
+}
+#eliminar_foranea {
+  display: none;
+}
+h4 {
+  display: none;
+}
+
+#contenedor_fo {
+  position: relative;
+}
+
+
+input {
+  border: none;
+}
+
+#contenedor_fo:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: " ";
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#label_pla_pro {
+  display: none;
+}
+#id_plataformaid {
+  display: none;
+}
+#id_tipoprocesoid {
+  display: none;
+}
+#label_responsableid {
+  display: none;
+}
+#label_responsableid {
+  display: none;
+}
+
+#label_nom_pro {
+  display: none;
+}
+#id_tie_sel {
+  display: none;
+}
+#label_unidadesid{
+  display: none;
+}
+#id_unidadesid{
+  display: none;
+}
+#label_tie_pro {
+  display: none;
+}
+
+#id_usuarioid{
+  display: none;
+}
+#label_tipo_proid{
+  display: none;
+}
+#id_responsableid{
+  display: none;
+}
+#label_rep_pro{
+  display: none;
+}
+#id_rep_pro{
+  display: none;
+}
+.threeO{
+  text-align: center;
+}
+
+/*                  new_________________ */
+#id_pre_pro{
+  display: none;
+}
+#id_doc_pro{
+  display: none;
+}
+#id_tie_pro{
+  display: none;
+}

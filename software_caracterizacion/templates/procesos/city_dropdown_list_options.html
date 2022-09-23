@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for responsable in responsableunidad %}
+<option value="{{ responsable.pk }}">{{ responsable.nombre }}</option>
+{% endfor %}

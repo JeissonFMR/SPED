@@ -1,0 +1,51 @@
+<div class="centerPdf"><h1>Universidad CESMAG</h1></div>
+<div class="centerPdf"><h3>Chatbot ADEL</h3></div>
+<div class="centerPdf"><h3>Caracterización de procesos</h3></div>
+<table>
+  <style type="text/css">
+    table {
+      border: 1px solid black;
+      text-align: center;
+    }
+    th {
+      height: 70px;
+    }
+
+    .centerPdf {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    .fecha {
+      float: right;
+    }
+  </style>
+  <div class="name">
+    <h4>Informe dado por: {{user.first_name}} {{user.last_name}}</h4>
+    <h4>Fecha de exportación de reporte: {{date}}</h4>
+    <h4>Nombre del usuario en la plataforma: {{user}}</h4>
+  </div>
+
+  <thead>
+    <tr>
+      <th>Pregunta base del proceso</th>
+      <th>Respuesta base del proceso</th>
+      <th>Usuario que realizó la petición</th>
+      <th>¿Proceso susceptible a automatización?</th>
+      <th>Fecha de creación del proceso</th>
+    </tr>
+  </thead>
+  {% for proceso in procesos %}
+  <tbody>
+    <tr>
+      <td><br />{{proceso.pre_pro}}</td>
+      <td><br />{{proceso.res_pro}}</td>
+      <td><br />{{proceso.usuarioid}}</td>
+      <td><br />{{proceso.aut_pro}}</td>
+      <td><br />{{proceso.fec_pro}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+  <hr />
+</table>

@@ -1,0 +1,18 @@
+{% extends "registration/password_reset_complete.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Contraseña cambiada correctamente" %}{% endblock %}
+
+{% block content %}
+<style>
+    .iniciar{
+        margin: auto;
+        margin-left: 20%;
+    }
+</style>
+<p>
+    <b>{% trans "Tu contraseña ha cambiado!" %}</b> <br>
+    <a href="{% url 'user-login' %}" class="btn btn-outline-info iniciar">Iniciar sesion</a>
+
+</p>
+{% endblock %}
