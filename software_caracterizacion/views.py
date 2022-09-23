@@ -132,18 +132,22 @@ def detalle_proceso(request, id):
 @login_required(login_url="user-login")
 def editar_proceso(request, id):
     proceso = get_object_or_404(Procesos, pk=id)
-    if request.method == 'POST':
-       
-        form_procesos = ProcesosFormulario(request.POST, instance=proceso)
-        if form_procesos.is_valid():
-            form_procesos.save()
-            messages.success(request, 'Proceso editado correctamente')
-            return redirect('procesos')
+    get_tipo = proceso.user.id #usuario del procesoz
+    if request.user.id == get_tipo:
+        if request.method == 'POST':
+        
+            form_procesos = ProcesosFormulario(request.POST, instance=proceso)
+            if form_procesos.is_valid():
+                form_procesos.save()
+                messages.success(request, 'Proceso editado correctamente')
+                return redirect('procesos')
+        else:
+            # crear nuevoi objeto
+            form_procesos = ProcesosFormulario(instance=proceso)
+        return render(request, 'procesos/editar.html', {'form_procesos': form_procesos})
     else:
-        # crear nuevoi objeto
-        print("SI PASAAAAAAAAAAAAAA222")
-        form_procesos = ProcesosFormulario(instance=proceso)
-    return render(request, 'procesos/editar.html', {'form_procesos': form_procesos})
+        messages.success(request, 'Esta acción no es permitida')
+        return render(request, 'login/inicio.html')
 
 
 @login_required(login_url="user-login")
