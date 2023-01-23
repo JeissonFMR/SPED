@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'caracterizacion_S.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sped_9u6v',
-        'USER': 'sped',
-        'PASSWORD': 'bOVAg8q3IPGqWIsijNa6ZPA3tIJF544I',
-        'HOST': 'dpg-cf6t0o4gqg47vk1bcdbg-a.frankfurt-postgres.render.com',
+        'NAME': 'sped',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
         'PORT': 5432
         # pip3 install PyMySQL
         # pip3 install pillow
