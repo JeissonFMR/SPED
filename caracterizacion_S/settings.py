@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
-#from numpy import true_divide
+# from numpy import true_divide
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$salw61#noxchw+-329jy(ohbp+7p$_^vn5#60)ryy97va_)z+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['gpedcesmag.herokuapp.com']
+DEBUG = True
+ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://gpedcesmag.herokuapp.com']
+# CSRF_TRUSTED_ORIGINS = ['https://gpedcesmag.herokuapp.com']
 
 
 # Application definition
@@ -91,15 +91,15 @@ WSGI_APPLICATION = 'caracterizacion_S.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbt1ad8tlbou6a',
-        'USER': 'lankrvijyllxgt',
-        'PASSWORD': 'e7a48d8d72e0e1913baabfcab65cf825f67d1d262f19441ea857c41be8c7d35d',
-        'HOST': 'ec2-54-173-237-110.compute-1.amazonaws.com',
+        'NAME': 'sped_9u6v',
+        'USER': 'sped',
+        'PASSWORD': 'bOVAg8q3IPGqWIsijNa6ZPA3tIJF544I',
+        'HOST': 'dpg-cf6t0o4gqg47vk1bcdbg-a.frankfurt-postgres.render.com',
         'PORT': 5432
-        #pip3 install PyMySQL
-        #pip3 install pillow
-        #pip install psycopg2-binary
-        ##Luegop hace migrate
+        # pip3 install PyMySQL
+        # pip3 install pillow
+        # pip install psycopg2-binary
+        # Luegop hace migrate
     }
 }
 
@@ -146,7 +146,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#LOGIN_URL = 'index_Login.html'
+# LOGIN_URL = 'index_Login.html'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -157,12 +157,12 @@ EMAIL_HOST_USER = 'trb.sistemas@unicesmag.edu.co'
 EMAIL_HOST_PASSWORD = '$unicesmag2022$$'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_TMP = os.path.join( BASE_DIR , 'static')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-os.makedirs(STATIC_TMP , exist_ok = True)
-os.makedirs(STATIC_ROOT , exist_ok = True)
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR ,'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

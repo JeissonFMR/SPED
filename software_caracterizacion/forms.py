@@ -39,12 +39,12 @@ class ProcesosFormulario(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['responsableid'].queryset = Responsableunidad.objects.none()
+        self.fields['responsableid'].queryset = ResponsableUnidad.objects.none()
 
         if 'unidadesid' in self.data:
             try:
                 unidades_id = int(self.data.get('unidadesid'))
-                self.fields['responsableid'].queryset = Responsableunidad.objects.filter(unidades_id=unidades_id).order_by('nombre')
+                self.fields['responsableid'].queryset = ResponsableUnidad.objects.filter(unidades_id=unidades_id).order_by('nombre')
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk and self.instance.unidadesid:

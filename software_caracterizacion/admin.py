@@ -21,9 +21,9 @@ class ProcesosAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     #     Procesos.objects.all()
 
 admin.site.register(Procesos, ProcesosAdmin)
-admin.site.register(TipoProceso)
+admin.site.register(TipoUnidad)
 admin.site.register(Unidades)
-admin.site.register(Responsableunidad)
+admin.site.register(ResponsableUnidad)
 admin.site.register(Usuario)
 admin.site.register(Plataforma)
 

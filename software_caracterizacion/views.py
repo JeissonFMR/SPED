@@ -119,7 +119,7 @@ def crear_proceso(request):
 @login_required(login_url="user-login")
 def load_responsable(request):
     unidades_id = request.GET.get('unidades_id')
-    responsableunidad = Responsableunidad.objects.filter(unidades_id=unidades_id).all()
+    responsableunidad = ResponsableUnidad.objects.filter(unidades_id=unidades_id).all()
     return render(request, 'procesos/city_dropdown_list_options.html', {'responsableunidad': responsableunidad})
 
 @login_required(login_url="user-login")

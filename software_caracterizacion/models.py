@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 import datetime
 # Create your models here.
 
-class TipoProceso(models.Model):
+class TipoUnidad(models.Model):
     nombre = models.CharField(max_length=150, null=True, unique=True, verbose_name='Tipo de unidad')
 
     def __str__(self):
@@ -33,7 +33,7 @@ class Unidades(models.Model):
         fila = self.nombre
         return fila
 
-class Responsableunidad(models.Model):
+class ResponsableUnidad(models.Model):
     nombre = models.CharField(max_length=100)
     unidades = models.ForeignKey(Unidades,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Nombre de la unidad')
     def __str__(self):
@@ -45,7 +45,7 @@ class Responsableunidad(models.Model):
 class Procesos(models.Model):
     # id = models.AutoField(primary_key=True)
     nom_pro = models.CharField(max_length=150, null=True, verbose_name='Nombre del proceso ', unique=True)
-    tipoprocesoid = models.ForeignKey(TipoProceso,null=True, blank=False, on_delete=models.PROTECT, verbose_name='Tipo de unidad que recibe la solicitud')
+    tipoprocesoid = models.ForeignKey(TipoUnidad,null=True, blank=False, on_delete=models.PROTECT, verbose_name='Tipo de unidad que recibe la solicitud')
     plataformaid = models.ForeignKey(Plataforma,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Plataforma a la cual va dirigida la solicitud:')
     usuarioid = models.ForeignKey(Usuario,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Usuario que realiza la solicitud')
     pre_pro = models.CharField(max_length=150, verbose_name='Pregunta base del proceso')
@@ -67,7 +67,7 @@ class Procesos(models.Model):
     hor_pro = models.CharField(max_length=50, editable=False, default=formatedHora, verbose_name='Hora')
 
     unidadesid = models.ForeignKey(Unidades,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Unidad que recibe la solicitud')
-    responsableid = models.ForeignKey(Responsableunidad,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Responsable de la unidad que recibe la solicitud')
+    responsableid = models.ForeignKey(ResponsableUnidad,null=True, blank=True, on_delete=models.PROTECT, verbose_name='Responsable de la unidad que recibe la solicitud')
     
  
     def __str__(self):
